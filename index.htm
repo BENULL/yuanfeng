@@ -22,17 +22,55 @@
 	<meta name="description" content="For fufu">
 	<title>FuFu</title>
 	<link rel="stylesheet" href="all.min.css" >
+	<style>
+        .content {
+            position: absolute;
+            width: 100%;
+            top: 40%;
+            transform: translate(0, -50%);
+            text-align: center;
+		}
+		.content h2 {
+			font-size: 400%;
+			font: 600 80px "Comic Sans MS";
+    		color: white;
+    		text-shadow: 0 0 20px #fdec84,
+            	10px -10px 30px #ffae35,
+            	20px -20px 40px #ec760c,
+            	-20px -60px 50px #cd4607,
+            	0px -80px 60px #973717,
+            	10px -40px 70px #451b0e;
+            font-weight: bolder;
+        }
+        .timer {
+            font-size: 250%;
+            line-height: 1.5;
+			margin: 1em 0;
+			font: 600 50px "Comic Sans MS";
+    		color: white;
+    		text-shadow: 0 0 20px #fdec84,
+            	10px -10px 30px #ffae35,
+            	20px -20px 40px #ec760c,
+            	-20px -60px 50px #cd4607,
+            	0px -80px 60px #973717,
+            	10px -40px 70px #451b0e;
+            font-weight: bolder;
+        }
+        .timer b {
+            color: rgb(253, 99, 125);
+        }
+    </style>
 </head>
 <body>
 	<div class="flowtime">
 		<div class="ft-section section-1" data-id="section-1">
 			<div id="/section-1/page-1" class="ft-page page-1" data-id="page-1">
-				<p class="text1"><span id="text-75" contenteditable="true">XX</span> ❤ <span id="text-76" contenteditable="true">XX</span></p>
-				<p class="text2">按键盘 "↓" <span id="text-78" contenteditable="true">开始吧！</span></p>
+				<p class="text1"><span id="text-75" contenteditable="true">BENULL</span> ❤ <span id="text-76" contenteditable="true">FUFU</span></p>
+				<p class="text2">按下键盘 "↓" <span id="text-78" contenteditable="true">开始吧！</span></p>
 			</div>
 			<div id="/section-1/page-2" class="ft-page page-2" data-id="page-2">
 				<p class="top-text" id="text-1" contenteditable="true">过去的他一直是一个人生活，享受着孤独，也憧憬着爱情。</p>
-				<img src="img/iali63.jpg" tppabs="img/iali63.jpg"  alt="过去的XX一直是一个人生活，享受着孤独，也憧憬着爱情。" />
+				<img src="img/iali63.jpg" tppabs="img/iali63.jpg"  alt="过去的他一直是一个人生活，享受着孤独，也憧憬着爱情。" />
 			</div>
 			<div id="/section-1/page-3" class="ft-page page-3 left-img" data-id="page-3">
 				<h2 class="text" id="text-2" contenteditable="true">一个人的长廊</h2>
@@ -79,7 +117,7 @@
 				<img src="img/iali25.jpg" tppabs="img/iali25.jpg" />
 			</div>
 			<div id="/section-3/page-3" class="ft-page page-13" data-id="page-3">
-				<img src="img/iali64.jpg" tppabs="img/iali64.jpg" alt='可是小明的爱情又在哪里呢？' />
+				<img src="img/iali64.jpg" tppabs="img/iali64.jpg" alt='可是他的爱情又在哪里呢？' />
 				<h3 id="text-13" contenteditable="true">可是他的爱情又在哪里呢？</h3>
 			</div>
 			<div id="/section-3/page-4" class="ft-page page-14 left-img" data-id="page-4">
@@ -281,54 +319,79 @@
 				<img src="img/14915.jpg" tppabs="img/14915.jpg" />
 				<p class="text">
 					<span id="text-73" contenteditable="true">我相信，她和他的故事会一直继续下去。</span><br />
-					<span id="text-74" contenteditable="true">无论精彩、平淡都会是他们喜欢的。</span><br />
-                    <span id="text-74" contenteditable="true">XXX，我爱你</span><br />
+					<span id="text-74" contenteditable="true">无论精彩、平淡都会是他们喜欢的。</span><br/>
 					<br />
 					<br />
-					<span> -- 按“Esc"键有惊喜</span>
+					<span> 按“Esc"键有惊喜哦</span>
 				</p>				
 			</div>
 		</div>
 	</div>
 	<!-- <div class="nojavascript">您的浏览器禁用了javascript，无法正常浏览本页面</div> -->
 
-	<!-- <div id="loveHeart">
-		<canvas id="garden"></canvas>
-		<div id="words">
-			<div id="messages">
-				Qian, I have fallen in love with you for
-				<div id="elapseClock"></div>
-			</div>
-			<div id="loveu">
-				Love u forever and ever.<br/>
-				<div class="signature">- Qingcai Cui | Germey</div>
-			</div>
-		</div>
-	</div> -->
+	<div id="timerContent" class="content" style="display:none">
+        <h2>Tomorrow is another day !</h2>
+        <div class="timer">
+            <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
+        </div>
+    </div>
 
-	<audio id="bgmMusic" src="lovebgm.mp3" autoplay="autoplay" loop preload="auto" type="audio/mp3"></audio>
+	<audio id="bgmMusic" src="lovebgm.mp3"  autoplay="autoplay" loop="loop" preload="auto" type="audio/mp3"></audio>
 
 	
 	<script src="jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
 	<script src="all.min.js" ></script>
 	<script src="love.min.js" ></script>
-	<div class="mPower"><span id="on" title="点击暂停"></span><span id="off" title="点击播放"></span></div>
-	<!-- <script type="text/javascript">
-		// var offsetX = $("#loveHeart").width() / 2;
-		// var offsetY = $("#loveHeart").height() / 2 - 55;
-		var together = new Date();
-		// 此处月份介于 0 ~ 11 之间。用本地时间表示，如 8 月要用 7 表示。
-		together.setFullYear(2021, 0, 1);
-		together.setHours(05);
-		together.setMinutes(20);
-		together.setSeconds(0);
-		together.setMilliseconds(0);
-		timeElapse(together);
-		setInterval(function () {
-			timeElapse(together);
-		}, 500);
-	</script> -->
+	<div class="mPower"><span id="on" title="点击暂停" style=""></span><span id="off" title="点击播放" style=""></span></div>	
+	<script type="text/javascript">
+		window.onload = function(){
+			setInterval("toggleSound()",10);
+		}
+		function toggleSound() {
+			var music = document.getElementById("bgmMusic");
+			if (music.paused) {
+				music.paused=false;
+				music.play();
+			}    
+		}
 
+		$(document).keyup(function(event){ 
+			switch(event.keyCode) {
+				case  27:
+				var timeContent = document.getElementById("timerContent");
+				timeContent.style="display:block"; 
+ 			}
+		});
+
+	</script>
 	
+
+    <script type="text/javascript">
+        function timer() {
+			var start = new Date(2021, 0, 1); // 2015.7.2
+			var t = new Date() - start;
+			
+            var h = ~~(t / 1000 / 60 / 60 % 24);
+            if (h < 10) {
+                h = "0" + h;
+            }
+            var m = ~~(t / 1000 / 60 % 60);
+            if (m < 10) {
+                m = "0" + m;
+            }
+
+            var s = ~~(t / 1000 % 60);
+            if (s < 10) {
+                s = "0" + s;
+            }
+            document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+            document.getElementById('h').innerHTML = h;
+            document.getElementById('m').innerHTML = m;
+            document.getElementById('s').innerHTML = s;
+        }
+        timer();
+        setInterval(timer, 1000);
+    </script>
 </body>
+
 </html>
